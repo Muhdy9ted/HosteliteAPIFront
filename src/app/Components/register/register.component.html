@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container">
+        <a id="navbar-brand" class="navbar-brand" [routerLink]="['/']" >Hostelite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+                
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" [routerLink]="['/']" >Home</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" href="#">Hostels</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" href="#">Landlords</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" href="#">Community</a>
+                </li>
+            </ul>
+        </div>
+    </div>  
+</nav>
+<div id="hero-image-div">
+    <div class="bg-image overlay">  
+        
+        <div id="hero-image-contents" class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Hostelite Boarding Services</h1>
+                <p id="hero-image-slogan"><i>we find you comfort on campus</i></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class ="container-fluid" id="registerDiv">
+    <div class="row">
+        <div class="col-md-7 mt-5">
+            <h3 class="text-center">Welcome To HosteLite!</h3>
+            <p class="text-center">Please complete to create your account.</p>
+            <form class="col-8 mx-auto" id="registerForm" #registerForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit()">
+                <!--<div class="form-row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="registerFirstname" placeholder="First name" required
+                        name="registerFirstname" #registerFirstname="ngModel" [(ngModel)]="">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" id="registerLastname" placeholder="Last name" required
+                        name="registerLastname" #registerLastname="ngModel" [(ngModel)]="">
+                  </div>
+                </div>-->
+                <div class="form-group mt-3 mx-auto">
+                    <input type="email" class="form-control col-12" id="registerEmail" placeholder="Email Address" required email
+                        name="registerEmail" #registerEmail="ngModel" [(ngModel)]="authService.formDataRegister.email">
+                </div>
+                <div class="form-group mx-auto">
+                    <input type="password" class="form-control col-12" id="registerPassword1" placeholder="Password: minimum of 8 characters"
+                     required minlength="8" name="registerPassword1" #registerPassword1="ngModel" [(ngModel)]="authService.formDataRegister.password">
+                </div>
+                <!---<div class="form-group mx-auto">
+                    <input type="password" class="form-control col-12" id="registerPassword2" placeholder="Confirm password"
+                        required minlength="8" name="registerPassword2" #registerPassword2="ngModel" [(ngModel)]="registerService.formData.password2">
+                </div>-->
+                <div class="form-group">
+                    <button type="submit" class="col-sm-3 btn" [disabled]="registerForm.invalid">Sign up</button> 
+                    <span class="mt-2 pl-2"><a href="#"> Already have an account? Sign in</a></span>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-5">
+            <img class="img-small img-fluid" src="assets/images/register-side.jpg">
+            <img class="img-small-overlap img-fluid" src="assets/images/register-side.jpg">
+            <h3 class="white-text text-center">HosteLite services are present in:</h3>
+            <ul class="white-text text-center">
+                <li>Federal University of Benin, Benin City, Edo state</li>
+                <li>Federal University of Benin, Benin City, Edo state</li>
+                <li>Federal University of Benin, Benin City, Edo state</li>
+                <li>Federal University of Benin, Benin City, Edo state</li>
+                <li>Federal University of Benin, Benin City, Edo state</li>
+                <li>Federal University of Benin, Benin City, Edo state</li>
+            </ul>
+        </div>
+    </div>
+</div>

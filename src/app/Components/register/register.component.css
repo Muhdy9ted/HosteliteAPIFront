@@ -1,0 +1,130 @@
+#navbar-brand{
+    font: normal bold 24px/32px 'Playfair Display',serif;
+    color: #F29422 !important;
+	text-transform: uppercase;
+	top: 25px;
+	left: 277px;
+	width: 130px;
+	height: 32px;
+	text-align: left;
+	letter-spacing: 0;
+}
+
+#navbarSupportedContent a{
+	font: normal 600 14px/32px 'Playfair Display', sans-serif;
+    text-decoration: none;
+	outline: none;
+    color: black !important;
+    text-transform: uppercase;
+	top: 25px;
+	height: 32px;
+	text-align: left;
+	letter-spacing: 0;
+	opacity: 1;
+	margin-bottom: 5px;
+}
+#hero-image-div{
+	position: absolute;
+	width: 100%;
+	height:calc(100vh - 450px);
+	padding: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.bg-image {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-image: url(/assets/images/home_background-short.png);
+	background-position:center;
+	background-size:contain;
+	background-attachment:fixed;
+}
+
+.bg-image.overlay:after {
+	content:"";
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-image: linear-gradient(to bottom, #292929 0%, #332f2f 100%);
+	opacity: 0.8;
+}
+
+#hero-image-contents{
+	position: relative;
+	top: 100px;
+	height:calc(100vh - 640px);
+	color: #FFFFFF !important;
+	overflow: hidden;
+	z-index: 1;
+	padding: 5px 1px;
+}
+
+#hero-image-contents h1{
+	color: #FFFFFF;
+}
+
+#hero-image-slogan{
+	line-height: 1px;
+	margin-bottom: 30px;
+}
+
+#registerDiv{
+    position: absolute;
+	top: 290px;
+    left: 0px;
+    width: 100%;
+    height: 1096px;
+    background: transparent linear-gradient(120deg, #5CE6A7 0%, #B0DEBB 22%, #878282 78%, #707070 96%, #F29422 100%) 0% 0% no-repeat padding-box;
+}
+
+.img-small{
+    position: relative;
+    top: 60px;
+    width: 400px;
+    height: 260px;
+    left: 60px;  
+}
+.img-small-overlap{
+    position: relative;
+    top: -70px;
+    width: 400px;
+    left: -100px;
+    height: 260px;  
+    z-index: 1;
+}
+
+.form-control{
+	background-color: transparent;
+	border-bottom: 3px solid #F29422;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+::-webkit-input-placeholder { /* Edge */
+    color: #84BFBF;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #84BFBF;
+  }
+  
+  ::placeholder {
+    color: black;
+  }
+
+  .white-text{
+    color: #FFFFFF;
+}
+
+.btn{
+	color: #FFFFFF;
+	background: #5E5347 0% 0% no-repeat padding-box;
+	border: 1px solid #43425D;
+}

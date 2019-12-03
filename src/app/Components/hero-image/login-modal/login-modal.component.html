@@ -1,0 +1,31 @@
+<div class="login-modal-overlay" (click)="onCloseModal()"></div>
+<div class="card login-modal">
+  <span class="close-x"><a (click)="onCloseModal()" style="cursor: pointer;">x</a></span>
+  <div class="d-flex justify-content-center">
+    <form id="loginForm" #loginForm ="ngForm" autocomplete="off" (ngSubmit)="onSubmit()"> 
+      <h3 class="card-title white-text pb-3 mb-4">Welcome Back, HosteLite!</h3>
+      <div class="form-group row">
+        <label for="loginEmail" class="col-sm-3 col-form-label" 
+          [class.green-icon]="loginEmail.valid" [class.red-icon]="loginEmail.invalid && loginEmail.touched">Email</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" id="loginEmail" placeholder="Email address" required 
+            name="loginEmail" #loginEmail="ngModel" [(ngModel)]="authService.formDataLogin.email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="loginPassword" class="col-sm-3 col-form-label"
+          [class.green-icon]="loginPassword.valid" [class.red-icon]="loginPassword.invalid && loginPassword.touched">Password</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="loginPassword" placeholder="Password" required minlength="8"
+            name="loginPassword" #loginPassword="ngModel" [(ngModel)]="authService.formDataLogin.password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <button type="submit" class="col-sm-3 btn ml-3" [disabled]="loginForm.invalid">Sign in</button> 
+        <span class="mt-2 pl-2"><a href="#" class="white-text"> Forgot password?</a></span>
+      </div>
+      <hr>
+      <p class="text-center">Don't have an account? <span><a href="#" class="white-text">Sign up</a></span></p>
+    </form>
+  </div>
+</div>

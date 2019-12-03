@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Roboto Condensed',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #34373a;
+    overflow-x:hidden;
+}
+
+a{
+    font-family: 'Playfair Display', sans-serif;
+    color: #1e1f20;
+    text-decoration: none;
+    outline: none;
+    font-weight: bold;
+}
+
+a:hover, a:focus{
+    text-decoration: none;
+    outline: none;
+    opacity: 0.5 !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Playfair Display SC',serif;
+    font-weight: 600;
+    margin-top: 11px;
+    margin-bottom: 13px;
+	color: #1f2124;
+}
+
+h1{
+    font-size: 38px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+h4{
+    font-size: 18px;
+}
+
+h5{
+    font-size: 16px;
+}
+
+h6{
+    font-size: 14px;
+}
+
+.white-text{
+    color: #f2f5f8;
+}
