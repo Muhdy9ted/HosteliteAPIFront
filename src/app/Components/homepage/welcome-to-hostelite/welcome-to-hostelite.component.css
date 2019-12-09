@@ -12,15 +12,20 @@
 	background-position:center;
 	background-size:contain;
 	background-attachment:fixed;
+	margin-top: -75px;
 }
 
-.bg-image.overlay:after {
-	content:"";
-	position: relative;
+.bg-image2 {
+	position:relative;
 	left:0;
 	right:0;
 	top:0;
 	bottom:0;
-	background-image: linear-gradient(to bottom, #292929 0%, #332f2f 100%);
-	opacity: 0.8;
+	background-image: url(/assets/images/smile2.png);
+	background-position:center;
+	background-size:contain;
+	background-attachment: scroll;
+	width: 2000px;
+	height: 200px;
+	margin-left: -20px;
 }

@@ -10,6 +10,7 @@ import { LoginModalComponent } from './Components/hero-image/login-modal/login-m
 import { RegisterComponent } from './Components/register/register.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { WelcomeToHosteliteComponent } from './Components/homepage/welcome-to-hostelite/welcome-to-hostelite.component';
+import { ExploreHostelsComponent } from './Components/homepage/explore-hostels/explore-hostels.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WelcomeToHosteliteComponent } from './Components/homepage/welcome-to-ho
     LoginModalComponent,
     RegisterComponent,
     HomepageComponent,
-    WelcomeToHosteliteComponent
+    WelcomeToHosteliteComponent,
+    ExploreHostelsComponent
   ],
   imports: [
     BrowserModule,
