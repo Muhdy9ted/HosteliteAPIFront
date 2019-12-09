@@ -1,0 +1,26 @@
+#welcome {
+    position:relative;
+}
+
+.bg-image {
+	position:relative;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-image: url(/assets/images/RepeatGrid2.png);
+	background-position:center;
+	background-size:contain;
+	background-attachment:fixed;
+}
+
+.bg-image.overlay:after {
+	content:"";
+	position: relative;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-image: linear-gradient(to bottom, #292929 0%, #332f2f 100%);
+	opacity: 0.8;
+}

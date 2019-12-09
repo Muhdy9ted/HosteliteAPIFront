@@ -47,12 +47,11 @@ hr{
   } 
 
 #hero-image-div{
-	position: absolute;
+	position: relative;
 	width: 100%;
 	height:calc(100vh - 80px);
 	padding: 0;
-	top: 0;
-	z-index: -1;
+	top: -75px;
 }
 
 .bg-image {

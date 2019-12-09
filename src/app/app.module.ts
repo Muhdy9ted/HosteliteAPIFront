@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { HeroImageComponent } from './Components/hero-image/hero-image.component';
 import { LoginModalComponent } from './Components/hero-image/login-modal/login-modal.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { HomepageComponent } from './Components/homepage/homepage.component';
+import { WelcomeToHosteliteComponent } from './Components/homepage/welcome-to-hostelite/welcome-to-hostelite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroImageComponent,
     LoginModalComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomepageComponent,
+    WelcomeToHosteliteComponent
   ],
   imports: [
     BrowserModule,
