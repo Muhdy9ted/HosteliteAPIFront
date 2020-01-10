@@ -1,0 +1,30 @@
+nav{	
+	z-index: 1;
+}
+
+#navbar-brand{
+    font: normal bold 24px/32px 'Playfair Display',serif;
+	color:#FF6700 !important;
+	text-transform: uppercase;
+	top: 25px;
+	left: 277px;
+	width: 130px;
+	height: 32px;
+	text-align: left;
+	letter-spacing: 0;
+	opacity: 1;
+}
+
+#navbarSupportedContent a{
+	font: normal 600 14px/32px 'Playfair Display', sans-serif;
+    text-decoration: none;
+	outline: none;
+    color: black !important;
+    text-transform: uppercase;
+	top: 25px;
+	height: 32px;
+	text-align: left;
+	letter-spacing: 0;
+	opacity: 1;
+	margin-bottom: 5px;
+}

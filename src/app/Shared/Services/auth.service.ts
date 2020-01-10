@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { RegisterDto } from '../Models/register-dto.model';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,6 +23,7 @@ export class AuthService {
   baseURL = 'http://localhost:50099/api/auth';
   userToken: any;
   decodedToken: any;
+  helper = new JwtHelperService();
 
   constructor(private http: HttpClient) { }
 
@@ -57,5 +59,10 @@ export class AuthService {
         return this.userToken;
       }
     } ));
+  }
+
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return this.helper.isTokenExpired(token);
   }
 }

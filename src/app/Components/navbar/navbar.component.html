@@ -26,29 +26,3 @@
         </div>
     </div>  
 </nav>
-<hr>
-<app-login-modal *ngIf="clickedLogin" (closeModalClicked)="onCloseModalClicked()"></app-login-modal>
-<div id="hero-image-div">
-    <div class="bg-image overlay">  
-        
-        <div id="hero-image-contents" class="row">
-            <div class="col-sm-12 text-center">
-                <h1>Hostelite Boarding Services</h1>
-                <p id="hero-image-slogan"><i>we find you comfort on campus</i></p>
-                <p>20,000 hostels, 120 tertiary institutions, over 2 thousand verified guest reviews. 24/7 customer service</p>
-                <form>
-                    <div class="input-group">
-                        <input id="search-form" class="form-control col-sm-6 text-center mx-auto" type="text" placeholder="Where do you want to reside on campus?">
-                        <!--<div class="input-group-append">
-                            <span class="input-group-text">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </div>-->
-                    </div>
-                    <a class="btn btn-primary mr-3 nav-link" *ngIf="authService.loggedIn()" [routerLink]="['/register']"  role="button">Register</a>
-                    <a class="btn btn-primary mr-3" *ngIf="authService.loggedIn()" style="cursor: pointer;" (click)="onLoginClicked()" role="button">Login</a>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
