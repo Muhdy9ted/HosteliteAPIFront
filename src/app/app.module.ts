@@ -20,6 +20,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { PageFooterComponent } from './Components/page-footer/page-footer.component';
 import { HeroSectionComponent } from './Components/hero-section/hero-section.component';
+import { AuthComponent } from './Components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HeroSectionComponent } from './Components/hero-section/hero-section.com
     NavbarComponent,
     FooterComponent,
     PageFooterComponent,
-    HeroSectionComponent
+    HeroSectionComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

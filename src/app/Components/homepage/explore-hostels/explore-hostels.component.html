@@ -1,19 +1,22 @@
 <div class="container-fluid">
     <div>
-        <div class="row counters pt-3 pb-1 mt-5">
+        <div class="row counters pt-3 pb-1 mt-5 section" id="cta">
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay"></div>
+			<!-- /Backgound Image -->
             <div class="col-md-9 offset-md-2 vl mb-3">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card text-center ">
-                            <div class="card-body">
+                        <div class="card text-center mt-3">
+                            <div class="card-body pt-3">
                                 <h5 class="card-title">Our Story</h5>
                                 <span><ngx-counter countValue=900 limit=999 speed=0.0001 color="black" size="small">+</ngx-counter></span><span> + </span>
                                 <p>Hostels</p>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div class="col-md-4">
-                        <div class="card text-center ">
+                        <div class="card text-center mt-3">
                             <div class="card-body">
                                 <h5 class="card-title">Our Story</h5>
                                 <span><ngx-counter countValue=900 limit=999 speed=0.0001 color="black" size="small">+</ngx-counter></span><span> + </span>
@@ -22,7 +25,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card text-center ">
+                        <div class="card text-center mt-3">
                             <div class="card-body">
                                 <h5 class="card-title">Our Story</h5>
                                 <span><ngx-counter countValue=200 limit=250 speed=0.0001 color="black" size="small">+</ngx-counter></span><span> + </span>
@@ -152,5 +155,32 @@
                 <a class="btn btn-primary mr-3 nav-link mt-4" [routerLink]="['/register']"  role="button">More Hostels</a>
             </div>
         </div>
-    </div>
+	</div>
+	<div style="position: static; margin-left: -15px; margin-right: -15px;">
+		<div id="contact-cta" class="section">
+
+			<!-- Backgound Image -->
+			<div class="bg-image-contact bg-parallax overlay"></div>
+			<!-- Backgound Image -->
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<h2 class="white-text text-center">Contact Us</h2>
+						<p class="lead white-text text-center">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+						<a class="btn btn-primary mr nav-link mt-4 mx-auto" href="#">Contact Us Now</a>
+					</div>
+
+				</div>
+				<!-- /row -->
+
+			</div>
+			<!-- /container -->
+
+		</div>
+	</div>
 </div>
