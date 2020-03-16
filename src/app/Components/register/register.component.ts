@@ -56,6 +56,7 @@ export class RegisterComponent implements OnInit {
           // document.getElementById('emailError1').textContent = error;
         }
       }, () => {
+        // create a loginredirect method that will receive the user data to login and the userCredentials already gotten from registration
         this.authService.login(this.user).subscribe(() => {
           this.router.navigate(['/dashboard']);
         });
