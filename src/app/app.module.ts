@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CounterModule } from 'ngx-counter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CollapseModule, BsDropdownModule, BsDatepickerModule, TabsModule } from 'ngx-bootstrap';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +23,9 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { PageFooterComponent } from './Components/page-footer/page-footer.component';
 import { HeroSectionComponent } from './Components/hero-section/hero-section.component';
-import { AuthComponent } from './Components/auth/auth.component';
+// import { MemberCardComponent } from './Components/member-list/member-card/member-card.component';
+// import { MemberDetailComponent } from './Components/member-list/member-detail/member-detail.component';
+// import { AuthComponent } from './Components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +44,22 @@ import { AuthComponent } from './Components/auth/auth.component';
     FooterComponent,
     PageFooterComponent,
     HeroSectionComponent,
-    AuthComponent
+    // MemberCardComponent,
+    // MemberDetailComponent,
+    // AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CounterModule.forRoot()
+    ReactiveFormsModule,
+    CounterModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    BrowserAnimationsModule,
+    CollapseModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    TabsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

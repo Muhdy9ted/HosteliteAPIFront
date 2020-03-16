@@ -8,6 +8,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AuthGuard } from './Shared/Services/auth.guard';
 import { AboutComponent } from './Components/about/about.component';
 import { HostelsComponent } from './Components/hostels/hostels.component';
+import { MemberListComponent } from './Components/member-list/member-list.component';
+// import { MemberDetailComponent } from './Components/member-list/member-detail/member-detail.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
   {path: 'hostels', component: HostelsComponent},
-  {path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent}
+  {path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent},
+  {path: 'hostilites', component: MemberListComponent},
+  // {path: 'hostilites/:id', component: MemberDetailComponent}
 ];
 
 
