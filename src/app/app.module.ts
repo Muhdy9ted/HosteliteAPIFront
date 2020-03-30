@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CounterModule } from 'ngx-counter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule, BsDropdownModule, BsDatepickerModule, TabsModule } from 'ngx-bootstrap';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,10 @@ import { HeroSectionComponent } from './Components/hero-section/hero-section.com
 // import { MemberCardComponent } from './Components/member-list/member-card/member-card.component';
 // import { MemberDetailComponent } from './Components/member-list/member-detail/member-detail.component';
 // import { AuthComponent } from './Components/auth/auth.component';
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -60,6 +65,13 @@ import { HeroSectionComponent } from './Components/hero-section/hero-section.com
     CollapseModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        whitelistedDomains: [],
+        blacklistedRoutes: []
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

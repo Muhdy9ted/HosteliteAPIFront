@@ -23,7 +23,7 @@ nav{
 	font: normal 600 14px/32px 'Playfair Display', sans-serif;
     text-decoration: none;
 	outline: none;
-    color: #FFFFFF !important;
+    color: #FFFFFF;
     text-transform: uppercase;
 	top: 25px;
 	height: 32px;
@@ -107,7 +107,7 @@ hr{
 	position:relative;
 	display:inline-block;
 	padding:10px 30px;
-	background-color: #F29422;
+	background-color: #F29422 !important;
 	border: 2px solid transparent;
 	color: #FFFFFF;
 	border-radius: 40px;
@@ -122,7 +122,6 @@ hr{
 	color:#FF6700;
 	padding-right: 45px;
 }
-
 
 #hero-image-contents .btn-primary:after {
 	content:"\f178";
@@ -139,3 +138,51 @@ hr{
 #hero-image-contents .btn-primary:hover:after{
 	opacity:1;
 }
+
+
+.btn-primary{
+	position:relative;
+	display:inline-block;
+	/* padding:10px 30px; */
+	background-color: #F29422 !important;
+	border: 1px solid transparent;
+	color: #FFFFFF;
+	border-radius: 20px;
+	/* margin-top: 5px; */
+	-webkit-transition:0.2s all;
+	transition:0.2s all;
+}
+
+.btn-primary:hover{
+	background-color:#fff;
+	border: 1px solid #FF6700;
+	color:#FF6700;
+	padding-right: 45px;
+}
+
+.btn-primary:after {
+	content:"\f178";
+	font-family:FontAwesome;
+	position:absolute;
+	width: 25px;
+	right: 10px;
+	text-align:center;
+	opacity:0;
+	-webkit-transition:0.2s all;
+	transition:0.2s all;
+}
+
+.btn-primary:hover:after{
+	opacity:1;
+}
+
+.linkcolor{
+	color: black !important;
+}
+
+.navbckgrdwhite{
+	background-color: white !important;
+	margin-bottom: 5px;	
+	z-index: 1;
+}
+

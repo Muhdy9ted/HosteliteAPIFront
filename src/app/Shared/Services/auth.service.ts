@@ -7,6 +7,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from '../Models/user.model';
+import { ResponseModel } from '../Models/response-model.model';
 
 
 
@@ -49,13 +50,15 @@ export class AuthService {
   }
 
   loginModal() {
-    return this.http.post(this.baseURL + '/login', this.formDataLogin, httpOptions).pipe(map((response: HttpResponse<any>) => {
-      const userResponse = Object.entries(response);
-      if (userResponse) {
-        localStorage.setItem('token', JSON.stringify(userResponse[0][1]));
-        this.userToken = JSON.stringify(userResponse[0][1]);
+    return  this.http.post(this.baseURL + '/login', this.formDataLogin, httpOptions).pipe(map((response: ResponseModel) => {
+      console.log(response);
+      if (response.state === 1) {
+        localStorage.setItem('token', JSON.stringify(response.data));
+        this.userToken = JSON.stringify(response.data);
         console.log(this.decodedToken);
         return this.userToken;
+      } else {
+        return response;
       }
     }), catchError(this.handleError));
   }

@@ -4,6 +4,7 @@
   <div class="d-flex justify-content-center">
     <form id="loginForm" #loginForm ="ngForm" autocomplete="off" (ngSubmit)="onSubmit()"> 
       <h3 class="card-title white-text pb-3 mb-4">Welcome Back, HosteLite!</h3>
+      <span id="errorMessage" style="color: red;">{{ errorMessage }}</span>
       <div class="form-group row">
         <label for="loginEmail" class="col-sm-4 col-form-label" 
           [class.green-icon]="loginEmail.valid" [class.red-icon]="loginEmail.invalid && loginEmail.touched">Email</label>
@@ -11,7 +12,7 @@
           <input type="email" class="form-control" id="loginEmail" placeholder="Email address" required 
             name="loginEmail" #loginEmail="ngModel" [(ngModel)]="authService.formDataLogin.email">
         </div>
-      </div>
+      </div> 
       <div class="form-group row">
         <label for="loginPassword" class="col-sm-4 col-form-label"
           [class.green-icon]="loginPassword.valid" [class.red-icon]="loginPassword.invalid && loginPassword.touched">Password</label>
@@ -21,7 +22,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <button type="submit" class="col-sm-3 btn ml-3" [disabled]="loginForm.invalid">Sign in</button> 
+        <button type="submit" class="col-sm-4 btn ml-3" [disabled]="loginForm.invalid">Sign in <i *ngIf="spin" class="fa fa-spinner fa-spin" style="font-size:24px"></i></button> 
         <span class="mt-2 pl-2"><a href="#" class="white-text"> Forgot password?</a></span>
       </div>
       <hr>

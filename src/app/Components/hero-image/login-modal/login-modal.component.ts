@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/Shared/Services/auth.service';
 import { LoginDTO } from 'src/app/Shared/Models/login-dto.model';
 import { Router } from '@angular/router';
@@ -13,6 +13,8 @@ export class LoginModalComponent implements OnInit {
 
   @Output() closeModalClicked = new EventEmitter<void>();
   user: LoginDTO = new LoginDTO();
+  spin = false;
+  errorMessage: string;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -24,13 +26,17 @@ export class LoginModalComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authService.login().subscribe((response) => {
-      console.log(response + ' success');
+    this.spin = true;
+    this.authService.loginModal().subscribe((response) => {
+      if (response.state === 0) {
+        this.errorMessage = response.msg;
+      }
     }, error => {
-        console.log( error + 'failed');
+      this.errorMessage = error;
+      this.spin = false;
       }, () => {
         this.router.navigate(['/dashboard']);
       }
-      );
+    );
   }
 }

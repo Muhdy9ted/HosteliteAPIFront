@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot,
+          RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
@@ -16,7 +17,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
       if (!this.authService.loggedIn()) {
         return true;
       }
-      this.router.navigate(['/']);
+      this.router.navigate(['/register']);
       return false;
   }
 
