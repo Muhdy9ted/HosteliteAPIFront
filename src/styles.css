@@ -1,3 +1,7 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
+
 body{
     font-family: 'Roboto Condensed',sans-serif;
     font-size: 15px;

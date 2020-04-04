@@ -11,7 +11,7 @@ export class HeroImageComponent implements OnInit {
   clickedLogin = false;
   isCollapsed = false;
 
-  constructor( private authService: AuthService, private router: Router) {}
+  constructor( public authService: AuthService, private router: Router) {}
 
   ngOnInit() {
   }
@@ -22,9 +22,12 @@ export class HeroImageComponent implements OnInit {
 
    // After clearing localStorage redirect to login screen
    logout() {
-    localStorage.clear();
-    console.log('logout');
-    this.router.navigate(['/about']);
+    // this.authService.userToken = null;
+    // this.authService.currentUser = null;
+    localStorage.removeItem('token');
+    // localStorage.removeItem('user');
+    // this.alertify.message('logged out');
+    this.router.navigate(['/']);
   }
 
   onCloseModalClicked() {

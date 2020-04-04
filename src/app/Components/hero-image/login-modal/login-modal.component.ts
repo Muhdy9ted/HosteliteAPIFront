@@ -16,7 +16,7 @@ export class LoginModalComponent implements OnInit {
   spin = false;
   errorMessage: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,11 +30,13 @@ export class LoginModalComponent implements OnInit {
     this.authService.loginModal().subscribe((response) => {
       if (response.state === 0) {
         this.errorMessage = response.msg;
+        console.log(this.errorMessage);
       }
     }, error => {
       this.errorMessage = error;
       this.spin = false;
       }, () => {
+        this.spin = false;
         this.router.navigate(['/dashboard']);
       }
     );

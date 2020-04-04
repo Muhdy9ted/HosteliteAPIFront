@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  @Output() profileClicked = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit() {
   }
 
+  onProfile() {
+    this.profileClicked.emit();
+  }
 }

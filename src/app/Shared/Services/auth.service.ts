@@ -29,7 +29,7 @@ export class AuthService {
   decodedToken: any;
   helper = new JwtHelperService();
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   register(user: User): Observable<User> {
     return this.http.post<User>(this.baseURL + '/register', user, httpOptions).pipe(catchError(this.handleError));
@@ -51,11 +51,9 @@ export class AuthService {
 
   loginModal() {
     return  this.http.post(this.baseURL + '/login', this.formDataLogin, httpOptions).pipe(map((response: ResponseModel) => {
-      console.log(response);
       if (response.state === 1) {
         localStorage.setItem('token', JSON.stringify(response.data));
         this.userToken = JSON.stringify(response.data);
-        console.log(this.decodedToken);
         return this.userToken;
       } else {
         return response;
