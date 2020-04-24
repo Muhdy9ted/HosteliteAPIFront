@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/cor
 import { AuthService } from 'src/app/Shared/Services/auth.service';
 import { LoginDTO } from 'src/app/Shared/Models/login-dto.model';
 import { Router } from '@angular/router';
+import { AlertifyService } from 'src/app/Shared/Services/alertify.service';
+import { TitleCasePipe } from '@angular/common';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class LoginModalComponent implements OnInit {
   spin = false;
   errorMessage: string;
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router, private alertify: AlertifyService) { }
 
   ngOnInit() {
   }
@@ -33,9 +35,16 @@ export class LoginModalComponent implements OnInit {
         console.log(this.errorMessage);
       }
     }, error => {
-      this.errorMessage = error;
+      console.log(error);
       this.spin = false;
+      if (error.status === 401) {
+        this.errorMessage = 'Email and password combination doesn"t exist.';
+        this.alertify.error('Email and password combination doesn"t exist.');
+      } else {
+        this.errorMessage = error.error;
+      }
       }, () => {
+        this.alertify.success('Welcome back');
         this.spin = false;
         this.router.navigate(['/dashboard']);
       }

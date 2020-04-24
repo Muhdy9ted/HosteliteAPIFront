@@ -4,6 +4,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap';
 import { User } from 'src/app/Shared/Models/user.model';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AlertifyService } from 'src/app/Shared/Services/alertify.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   bsConfig: Partial<BsDatepickerConfig>;
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router,
+              private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.bsConfig = { containerClass: 'theme-orange', isAnimated: true };
@@ -49,10 +51,17 @@ export class RegisterComponent implements OnInit {
       this.user = Object.assign({}, this.registerForm.value);
       this.authService.register(this.user).subscribe((userCredential) => {
         console.log(userCredential);
+        this.alertify.message('Registration Successful');
       }, error => {
         if (error) {
           this.spin = false;
-          this.emailError = error;
+          const RegisterError = Object.entries(error);
+          console.log(RegisterError[7][1]);
+          const emailerror = RegisterError[7][1];
+          console.log(emailerror[0]);
+          const errorNow2 = error.error.Email[0];
+          console.log(errorNow2);
+          this.emailError = errorNow2;
           // document.getElementById('emailError1').textContent = error;
         }
       }, () => {

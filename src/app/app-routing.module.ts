@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'hostels', component: HostelsComponent},
   {path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent},
-  {path: 'hostilites', component: MemberListComponent},
+  {path: 'hostelites', component: MemberListComponent},
   // {path: 'hostilites/:id', component: MemberDetailComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

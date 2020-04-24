@@ -28,7 +28,7 @@
             </ul>
         </div>
     </div>  
-    <a class="btn btn-primary nav-link float-right" *ngIf="!authService.loggedIn()" style="cursor: pointer;" (click)="logout()" role="button">Logout</a>
+    <a class="btn btn-primary nav-link float-right" *ngIf="!authService.loggedIn()" style="cursor: pointer;" (click)="logout()" role="button">Logout {{ authService.decodedToken?.unique_name | titlecase}}</a>
 </nav>
 <hr>
 <app-login-modal *ngIf="clickedLogin" (closeModalClicked)="onCloseModalClicked()"></app-login-modal>

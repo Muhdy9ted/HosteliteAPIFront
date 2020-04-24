@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Shared/Services/auth.service';
 import { Router } from '@angular/router';
+import { AlertifyService } from 'src/app/Shared/Services/alertify.service';
 
 @Component({
   selector: 'app-hero-image',
@@ -11,7 +12,7 @@ export class HeroImageComponent implements OnInit {
   clickedLogin = false;
   isCollapsed = false;
 
-  constructor( public authService: AuthService, private router: Router) {}
+  constructor( public authService: AuthService, private router: Router, private alertify: AlertifyService) {}
 
   ngOnInit() {
   }
@@ -26,7 +27,7 @@ export class HeroImageComponent implements OnInit {
     // this.authService.currentUser = null;
     localStorage.removeItem('token');
     // localStorage.removeItem('user');
-    // this.alertify.message('logged out');
+    this.alertify.message('logged out');
     this.router.navigate(['/']);
   }
 
