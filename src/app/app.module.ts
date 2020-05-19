@@ -24,6 +24,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { PageFooterComponent } from './Components/page-footer/page-footer.component';
 import { HeroSectionComponent } from './Components/hero-section/hero-section.component';
+import { HostelDetailComponent } from './Components/hostels/hostel-detail/hostel-detail.component';
 // import { MemberCardComponent } from './Components/member-list/member-card/member-card.component';
 // import { MemberDetailComponent } from './Components/member-list/member-detail/member-detail.component';
 // import { AuthComponent } from './Components/auth/auth.component';
@@ -49,6 +50,7 @@ export function tokenGetter() {
     FooterComponent,
     PageFooterComponent,
     HeroSectionComponent,
+    HostelDetailComponent,
     // MemberCardComponent,
     // MemberDetailComponent,
     // AuthComponent

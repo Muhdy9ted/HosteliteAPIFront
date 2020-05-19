@@ -3,13 +3,14 @@ import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRou
           RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { AlertifyService } from './alertify.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService, private alertify: AlertifyService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -18,6 +19,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
         return true;
       }
       this.router.navigate(['']);
+      this.alertify.error('Please Login first');
       return false;
   }
 

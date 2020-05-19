@@ -12,10 +12,10 @@ import { map } from 'rxjs/operators';
 //   })
 // };
 
+const token =  JSON.parse(localStorage.getItem('token'));
 const httpOptions = {
   headers: new HttpHeaders({
-    // tslint:disable-next-line: object-literal-key-quotes
-    'Authorization': 'Bearer ' + localStorage.getItem('token')
+    Authorization: 'Bearer ' + token
   })
 };
 
@@ -24,7 +24,7 @@ const httpOptions = {
 })
 export class UserService {
 
-  baseUrl = environment.apiUrl + 'users/';
+  baseUrl = environment.apiUrl;
 
 
   constructor(public http: HttpClient) { }
@@ -34,6 +34,6 @@ export class UserService {
   }
 
   getUser(id): Observable<User> {
-    return this.http.get<User>(this.baseUrl + 'user/' + id, httpOptions);
+    return this.http.get<User>(this.baseUrl + 'users/' + id, httpOptions);
   }
 }

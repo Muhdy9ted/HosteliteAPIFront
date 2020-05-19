@@ -11,17 +11,18 @@
                     <!-- row -->
                     <div class="row">
                         <!-- single blog -->
-                        
-                            <div class="col-md-6">
+
+                            <div class="col-md-6" *ngFor= "let hostel of hostels">
                                 <div class="course">
                                     <a href=# class="course-img">
-                                        <img src="">
+                                        <img [src]="hostel.PhotoUrl">
                                         <i class="course-link-icon fa fa-link"></i>
                                     </a>
-                                    <a href=# class="course-title"></a>
+                                    <p>hostel.</p>
+                                    <a href=# class="course-title">{{hostel.HostelName}}</a>
                                     <div class="course-details">
-                                        <span class="course-category"></span>
-                                        <span class="course-price course-free"></span>
+                                        <span class="course-category">{{hostel.HostelLocation}}</span>
+                                        <span class="course-price course-free">{{hostel.RentPerRoom}}</span>
                                     </div>
                                 </div>
                             </div>

@@ -17,9 +17,9 @@ const routes: Routes = [
   {path: 'login', component: LoginModalComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'hostels', component: HostelsComponent},
+  {path: 'hostels', canActivate: [AuthGuard], component: HostelsComponent},
   {path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent},
-  {path: 'hostelites', component: MemberListComponent},
+  {path: 'hostelites', canActivate: [AuthGuard], component: MemberListComponent},
   // {path: 'hostilites/:id', component: MemberDetailComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
