@@ -17,17 +17,13 @@ import { HomepageComponent } from './Components/homepage/homepage.component';
 import { WelcomeToHosteliteComponent } from './Components/homepage/welcome-to-hostelite/welcome-to-hostelite.component';
 import { ExploreHostelsComponent } from './Components/homepage/explore-hostels/explore-hostels.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { MemberListComponent } from './Components/member-list/member-list.component';
+import { MemberListComponent } from './Components/members/member-list/member-list.component';
 import { AboutComponent } from './Components/about/about.component';
-import { HostelsComponent } from './Components/hostels/hostels.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { PageFooterComponent } from './Components/page-footer/page-footer.component';
 import { HeroSectionComponent } from './Components/hero-section/hero-section.component';
-import { HostelDetailComponent } from './Components/hostels/hostel-detail/hostel-detail.component';
-// import { MemberCardComponent } from './Components/member-list/member-card/member-card.component';
-// import { MemberDetailComponent } from './Components/member-list/member-detail/member-detail.component';
-// import { AuthComponent } from './Components/auth/auth.component';
+import { HostelsListComponent } from './Components/hostels/hostels-list/hostels-list.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -45,15 +41,11 @@ export function tokenGetter() {
     DashboardComponent,
     MemberListComponent,
     AboutComponent,
-    HostelsComponent,
     NavbarComponent,
     FooterComponent,
     PageFooterComponent,
     HeroSectionComponent,
-    HostelDetailComponent,
-    // MemberCardComponent,
-    // MemberDetailComponent,
-    // AuthComponent
+    HostelsListComponent,
   ],
   imports: [
     BrowserModule,

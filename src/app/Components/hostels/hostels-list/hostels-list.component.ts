@@ -4,11 +4,11 @@ import { HostelService } from 'src/app/Shared/Services/hostel.service';
 import { AlertifyService } from 'src/app/Shared/Services/alertify.service';
 
 @Component({
-  selector: 'app-hostels',
-  templateUrl: './hostels.component.html',
-  styleUrls: ['./hostels.component.css']
+  selector: 'app-hostels-list',
+  templateUrl: './hostels-list.component.html',
+  styleUrls: ['./hostels-list.component.css']
 })
-export class HostelsComponent implements OnInit {
+export class HostelsListComponent implements OnInit {
 
   hostels: Hostel[];
 
@@ -27,3 +27,4 @@ export class HostelsComponent implements OnInit {
     });
   }
 }
+
