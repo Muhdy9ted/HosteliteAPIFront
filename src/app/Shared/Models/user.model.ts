@@ -5,6 +5,7 @@ export class User {
     public Email: string;
     public Firstname: string;
     public Lastname: string;
+    public gender: string;
     public Age: number;
     public Datejoined: Date;
     public PhotoUrl: string;

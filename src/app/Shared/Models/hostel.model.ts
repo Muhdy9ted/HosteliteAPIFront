@@ -11,15 +11,15 @@ export class Hostel {
 
     public HostelType: string;
 
-    public HostelNumberOfRooms: number;
+    public HostelNumberOfRooms?: number;
 
-    public HostelDescription: string;
+    public HostelDescription?: string;
 
     public VacantRoom: boolean;
 
-    public HostelSlug: string;
+    // public HostelSlug: string;
 
-    public RentPerRoom: number;
+    public RentPerRoom?: number;
 
     public CreatedHostel: Date;
 

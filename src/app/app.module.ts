@@ -24,9 +24,13 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { PageFooterComponent } from './Components/page-footer/page-footer.component';
 import { HeroSectionComponent } from './Components/hero-section/hero-section.component';
 import { HostelsListComponent } from './Components/hostels/hostels-list/hostels-list.component';
+import { ErrorInterceptorProvider } from './Shared/Services/error.interceptor';
+import { MemberCardComponent } from './Components/members/member-list/member-card/member-card.component';
 
 export function tokenGetter() {
-  return localStorage.getItem('token');
+  return JSON.parse(localStorage.getItem('token'));
+  // const token =  JSON.parse(localStorage.getItem('token'));
+
 }
 
 @NgModule({
@@ -46,6 +50,7 @@ export function tokenGetter() {
     PageFooterComponent,
     HeroSectionComponent,
     HostelsListComponent,
+    MemberCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,12 +67,12 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter,
-        whitelistedDomains: [],
-        blacklistedRoutes: []
+        whitelistedDomains: ['localhost:50099'],
+        blacklistedRoutes: ['localhost:50099/api/auth']
       }
     })
   ],
-  providers: [],
+  providers: [ErrorInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

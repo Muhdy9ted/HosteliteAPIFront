@@ -12,12 +12,12 @@ import { map } from 'rxjs/operators';
 //   })
 // };
 
-const token =  JSON.parse(localStorage.getItem('token'));
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + token
-  })
-};
+// const token =  JSON.parse(localStorage.getItem('token'));
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     Authorization: 'Bearer ' + token
+//   })
+// };
 
 @Injectable({
   providedIn: 'root'
@@ -30,10 +30,10 @@ export class UserService {
   constructor(public http: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.baseUrl + 'users', httpOptions);
+    return this.http.get<User[]>(this.baseUrl + 'users');
   }
 
   getUser(id): Observable<User> {
-    return this.http.get<User>(this.baseUrl + 'users/' + id, httpOptions);
+    return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
 }

@@ -5,12 +5,12 @@ import { Hostel } from '../Models/hostel.model';
 import { environment } from 'src/environments/environment';
 import { tokenGetter } from 'src/app/app.module';
 
-const token =  JSON.parse(localStorage.getItem('token'));
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + token
-  })
-};
+// const token =  JSON.parse(localStorage.getItem('token'));
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     Authorization: 'Bearer ' + token
+//   })
+// };
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,10 @@ export class HostelService {
   constructor(private http: HttpClient) { }
 
   getHostels(): Observable<Hostel[]> {
-    return this.http.get<Hostel[]>(this.baseUrl + 'hostels', httpOptions);
+    return this.http.get<Hostel[]>(this.baseUrl + 'hostels');
   }
 
   getHostel(id): Observable<Hostel> {
-    return this.http.get<Hostel>(this.baseUrl + 'hostels/' + id, httpOptions);
+    return this.http.get<Hostel>(this.baseUrl + 'hostels/' + id);
   }
 }
