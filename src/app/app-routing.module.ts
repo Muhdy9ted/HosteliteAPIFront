@@ -9,6 +9,7 @@ import { AuthGuard } from './Shared/Services/auth.guard';
 import { AboutComponent } from './Components/about/about.component';
 import { MemberListComponent } from './Components/members/member-list/member-list.component';
 import { HostelsListComponent } from './Components/hostels/hostels-list/hostels-list.component';
+import { MemberDetailComponent } from './Components/members/member-detail/member-detail.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'hostels', canActivate: [AuthGuard], component: HostelsListComponent},
   {path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent},
   {path: 'hostelites', canActivate: [AuthGuard], component: MemberListComponent},
+  {path: 'hostelites/:id', canActivate: [AuthGuard], component: MemberDetailComponent},
   // {path: 'hostilites/:id', component: MemberDetailComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

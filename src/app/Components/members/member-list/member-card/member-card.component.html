@@ -1,10 +1,10 @@
 <div class="card bb-4">
     <div class="card-img-wrapper">
         <img class="card-img-top" src="{{ user.PhotoUrl}}">
-        <ul class="list-inline member-icons animate text-center">
-            <li class="list-inline-iem"><button class="btn btn-primary"><i class="fa far-user"></i></button></li>
-            <li class="list-inline-iem"><button class="btn btn-primary"><i class="fa far-heart"></i></button></li>
-            <li class="list-inline-iem"><button class="btn btn-primary"><i class="fa far-envelope"></i></button></li>
+        <ul class="list-group list-group-horizontal member-icons animate"> 
+            <li class="list-group-item"><button class="btn btn-primary" [routerLink]="['/hostelites/', user.Id]"> <span style="color: rgb(236, 155, 141);"><i class="fas fa-user"></i></span></button></li>
+            <li class="list-group-item"><button class="btn btn-primary"><i class="far fa-heart"></i></button></li>
+            <li class="list-group-item"><button class="btn btn-primary"><i class="far fa-envelope"></i></button></li>
         </ul>
     </div>
     <div class="card-body p-1">

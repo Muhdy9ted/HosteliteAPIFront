@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="{{user.PhotoUrl}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{user.Firstname}}</h5>
+                  <p class="card-text">{{user.gender}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-8">
+          <div>
+            <tabset>
+              <tab heading="about {{user.Age}}" id="tab1">Basic content</tab>
+              <tab heading="Basic Title 1">Basic content 1</tab>
+              <tab heading="Basic Title 2">Basic content 2</tab>
+            </tabset>
+        </div>
+        </div>
+    </div>
+</div>

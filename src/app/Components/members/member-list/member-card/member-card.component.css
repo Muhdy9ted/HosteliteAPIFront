@@ -34,3 +34,11 @@
 .animate {
     transition: all 0.3s ease-in-out;
 }
+
+.list-group-item{
+    background-color: transparent !important; 
+    border: none !important;
+    margin: 0  !important;
+    padding: 3px !important;
+    text-align: center;
+}

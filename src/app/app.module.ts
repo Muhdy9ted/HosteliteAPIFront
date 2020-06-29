@@ -26,6 +26,7 @@ import { HeroSectionComponent } from './Components/hero-section/hero-section.com
 import { HostelsListComponent } from './Components/hostels/hostels-list/hostels-list.component';
 import { ErrorInterceptorProvider } from './Shared/Services/error.interceptor';
 import { MemberCardComponent } from './Components/members/member-list/member-card/member-card.component';
+import { MemberDetailComponent } from './Components/members/member-detail/member-detail.component';
 
 export function tokenGetter() {
   return JSON.parse(localStorage.getItem('token'));
@@ -51,6 +52,7 @@ export function tokenGetter() {
     HeroSectionComponent,
     HostelsListComponent,
     MemberCardComponent,
+    MemberDetailComponent,
   ],
   imports: [
     BrowserModule,
